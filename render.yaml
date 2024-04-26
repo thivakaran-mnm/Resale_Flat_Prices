@@ -1,6 +1,11 @@
+# Exported from Render on 2024-04-26T04:41:05Z
 services:
-  - name: streamlit
-    type: web
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run Resale_Flat_Prices.py --server.port $PORT
+- type: web
+  name: Resale_Flat_Prices-1
+  runtime: python
+  repo: https://github.com/thivakaran-mnm/Resale_Flat_Prices
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: streamlit run Resale_Flat_Prices.py
+version: "1"
