@@ -1,4 +1,5 @@
 services:
   - name: streamlit
+    type: web
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run Resale_Flat_Prices.py --server.port $PORT
