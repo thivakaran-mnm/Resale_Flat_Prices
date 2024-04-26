@@ -158,7 +158,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     script_dir = os.path.dirname(__file__)
 
     # Construct the absolute path to the file
-    file_path = os.path.join(script_dir, "Resale_Flat_Prices_Model_1.pkl")
+    file_path = os.path.join(script_dir, "C:\Users\hp\Resale_Flat_Prices_Model_1.pkl")
 
     # Load the .pkl file
     try:
