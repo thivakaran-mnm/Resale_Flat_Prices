@@ -154,22 +154,9 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     rem_les_month= int(re_les_month)
     lese_coms_dt= int(les_coms_dt)
 
-    # Get the directory of the script
-    script_dir = os.path.dirname(__file__)
 
-    # Construct the absolute path to the file
-    file_path = os.path.join(script_dir, "C:\Users\hp\Resale_Flat_Prices_Model_1.pkl")
-
-    # Load the .pkl file
-    try:
-        with open(file_path, "rb") as f:
-            regg_model= pickle.load(f)
-    except FileNotFoundError:
-            st.error("Error: Model file not found. Please check the file path.")
-
-
-    #with open(r"Resale_Flat_Prices_Model_1.pkl","rb") as f:
-        #regg_model= pickle.load(f)
+    with open(r"Resale_Flat_Prices_Model_1.pkl","rb") as f:
+        regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
                            flt_model_2,str_str,str_end,rem_les_year,rem_les_month,
