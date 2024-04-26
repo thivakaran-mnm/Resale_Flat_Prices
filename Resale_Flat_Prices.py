@@ -180,7 +180,7 @@ if select == "Home":
     #img= Image.open(r"E:\GUVI\DATASCIENCE\hdbs.jpg")
     #st.image(img)
     image_url = "https://onecms-res.cloudinary.com/image/upload/s--vLUJGrPk--/c_crop,h_900,w_1600,x_0,y_131/c_fill,g_auto,h_468,w_830/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:cna,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2023/10/24/jem_0171.jpg?itok=rcZ4bQxJ"
-    st.image(image_url, caption='Image from URL', use_column_width=True)
+    st.image(image_url, caption='Singapore HDB Flat', use_column_width=True)
 
     st.write("Welcome to our app! Are you curious about the future value of your dream home?")
     st.write("Or perhaps you're considering selling and want to know what price to expect?")
