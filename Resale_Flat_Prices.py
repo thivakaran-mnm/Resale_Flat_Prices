@@ -8,6 +8,12 @@ from streamlit_option_menu import option_menu
 import pickle
 from PIL import Image
 import os
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+
+gauth = GoogleAuth()
+gauth.LocalWebserverAuth()  # Creates local webserver and auto handles authentication.
+drive = GoogleDrive(gauth)
 
 def town_mapping(town_map):
     if town_map == 'ANG MO KIO':
@@ -154,9 +160,13 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     rem_les_month= int(re_les_month)
     lese_coms_dt= int(les_coms_dt)
 
-    pkl_path="https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=drive_link"
     
-    with open(pkl_path,"rb") as f:
+    file_id = '1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66'
+
+    file = drive.CreateFile({'id': file_id})
+    file.GetContentFile('Resale_Flat_Prices_Model_1.pkl')
+    
+    with open('Resale_Flat_Prices_Model_1.pkl',"rb") as f:
         regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
