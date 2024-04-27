@@ -154,8 +154,9 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     rem_les_month= int(re_les_month)
     lese_coms_dt= int(les_coms_dt)
 
-
-    with open(r"Resale_Flat_Prices_Model_1.pkl","rb") as f:
+    pkl_path="https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=drive_link"
+    #Resale_Flat_Prices_Model_1.pkl
+    with open(pkl_path,"rb") as f:
         regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
