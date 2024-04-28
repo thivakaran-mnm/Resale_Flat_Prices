@@ -154,12 +154,8 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     rem_les_month= int(re_les_month)
     lese_coms_dt= int(les_coms_dt)
 
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Construct the absolute path to the .pkl file
-    pkl_file_path = os.path.join(script_dir, '/mount/src/resale_flat_prices/Resale_Flat_Prices/Resale_Flat_Prices_Model_1.pkl')
-    # Load the .pkl file
-    with open(pkl_file_path, 'rb') as f:
-    #with open('resale_flat_prices/Resale_Flat_Prices_Model_1.pkl',"rb") as f:
+
+    with open('model.pkl',"rb") as f:
 
         regg_model= pickle.load(f)
 
