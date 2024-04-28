@@ -160,18 +160,8 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     model_url = 'https://github.com/thivakaran-mnm/Resale_Flat_Prices/blob/main/model.pkl'
     response = requests.get(model_url)
     # Check if the download was successful
-    if response.status_code == 200:
-        with open('model.pkl', 'wb') as f:
-             f.write(response.content)
-    
-        # Load the model from the file
-        try:
-            with open('model.pkl', 'rb') as f:
-                 regg_model = pickle.load(f)
-        except pickle.UnpicklingError as e:
-                 print("Error unpickling model:", e)
-    # Load the model from the downloaded content
-        #regg_model = pickle.loads(response.content)
+    #if response.status_code == 200:
+    regg_model = pickle.loads(response.content)
         #regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
