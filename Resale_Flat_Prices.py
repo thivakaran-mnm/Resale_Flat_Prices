@@ -5,7 +5,8 @@ warnings.filterwarnings("ignore")
 from datetime import datetime
 import streamlit as st
 from streamlit_option_menu import option_menu
-import pickle
+#import pickle
+from joblib import load
 from PIL import Image
 import os
 import requests
