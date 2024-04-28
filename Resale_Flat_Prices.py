@@ -162,7 +162,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     # Check if the download was successful
     if response.status_code == 200:
         with open('model.pkl', 'wb') as f:
-        f.write(response.content)
+             f.write(response.content)
     
         # Load the model from the file
         try:
