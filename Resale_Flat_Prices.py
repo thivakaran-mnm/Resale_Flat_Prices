@@ -157,7 +157,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
 
 
     #with open('model.pkl',"rb") as f:
-    model_url = 'https://github.com/thivakaran-mnm/Resale_Flat_Prices/blob/main/model.pkl'
+    model_url = 'https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=sharing'
     response = requests.get(model_url)
     # Check if the download was successful
     #if response.status_code == 200:
