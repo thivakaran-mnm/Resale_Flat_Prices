@@ -155,7 +155,9 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     lese_coms_dt= int(les_coms_dt)
 
     
-    with open('resale_flat_prices/Resale_Flat_Prices_Model_1.pkl',"rb") as f:
+    #with open('resale_flat_prices/Resale_Flat_Prices_Model_1.pkl',"rb") as f:
+    with open('resale_flat_prices/Resale_Flat_Prices_Model_1.pkl', 'rb') as f:
+
         regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
