@@ -157,9 +157,6 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
 
 
     with open('model.pkl',"rb") as f:
-    #model_url = 'https://github.com/thivakaran-mnm/Resale_Flat_Prices/blob/main/model.pkl'
-    #response = requests.get(model_url)
-    #regg_model = pickle.loads(response.content)
         regg_model= pickle.load(f)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
