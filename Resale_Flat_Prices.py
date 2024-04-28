@@ -157,7 +157,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
 
 
     #with open('model.pkl',"rb") as f:
-    model_url = 'https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=sharing'
+    model_url = 'https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66'
     response = requests.get(model_url)
     regg_model = pickle.loads(response.content)
         #regg_model= pickle.load(f)
