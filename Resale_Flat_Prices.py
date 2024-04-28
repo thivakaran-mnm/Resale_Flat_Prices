@@ -8,6 +8,7 @@ from streamlit_option_menu import option_menu
 import pickle
 from PIL import Image
 import os
+import requests
 
 def town_mapping(town_map):
     if town_map == 'ANG MO KIO':
@@ -156,7 +157,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
 
 
     #with open('model.pkl',"rb") as f:
-    model_url = 'https://raw.githubusercontent.com/username/repository/main/model.pkl'
+    model_url = 'https://github.com/thivakaran-mnm/Resale_Flat_Prices/blob/main/model.pkl'
     response = requests.get(model_url)
     # Check if the download was successful
     if response.status_code == 200:
