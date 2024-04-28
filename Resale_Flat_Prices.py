@@ -156,11 +156,7 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
     rem_les_month= int(re_les_month)
     lese_coms_dt= int(les_coms_dt)
 
-
-    #with open('model.pkl',"rb") as f:
-        #regg_model= pickle.load(f)
     joblib.dump(regg_model, 'model.pkl')
-
     # Load the model
     regg_model = joblib.load('model.pkl')
         
