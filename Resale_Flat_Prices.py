@@ -240,8 +240,7 @@ elif select == "Price Prediction":
     if button:
 
             
-        pre_price= predict_price(year, town, flat_type, flr_area_sqm, flat_model,
-                        stry_start, stry_end, re_les_year, re_les_month, les_coms_dt)
+        pre_price= predict_price(year, town, flat_type, flr_area_sqm, flat_model, stry_start, stry_end, re_les_year, re_les_month, les_coms_dt)
 
         st.write("## :green[**The Predicted Price is :**]",pre_price, " :green[**$**]")
 
