@@ -6,7 +6,6 @@ from datetime import datetime
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pickle
-from joblib import load
 from PIL import Image
 import os
 import requests
@@ -158,30 +157,10 @@ def predict_price(year,town,flat_type,flr_area_sqm,flat_model,stry_start,stry_en
 
 
     #with open('model.pkl',"rb") as f:
-    #model_url = 'https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=sharing'
-    #response = requests.get(model_url)
-    #regg_model = pickle.loads(response.content)
+    model_url = 'https://drive.google.com/file/d/1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66/view?usp=sharing'
+    response = requests.get(model_url)
+    regg_model = pickle.loads(response.content)
         #regg_model= pickle.load(f)
-
-    # Google Drive direct download link
-    drive_link = 'https://drive.google.com/uc?id=1GhrlU_sDDkSEEA3KSjJ6DG_DZ5enhG66'
-    
-    # Download the file
-    response = requests.get(drive_link)
-    
-    # Check if the download was successful
-    if response.status_code == 200:
-        # Save the downloaded content to a file
-        with open('model.pkl', 'wb') as f:
-            f.write(response.content)
-        
-        # Load the model from the file using joblib
-        try:
-            regg_model = load('model.pkl')
-        except Exception as e:
-            print("Error loading model:", e)
-    else:
-        print("Error downloading file from Google Drive:", response.status_code)
 
     user_data = np.array([[year_1,town_2,flt_ty_2,flr_ar_sqm_1,
                            flt_model_2,str_str,str_end,rem_les_year,rem_les_month,
